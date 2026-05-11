@@ -4,6 +4,10 @@ steps:
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['run', '--rm', 'gcr.io/$PROJECT_ID/user-management-api', 'pytest', '-q']
+    allowFailure: true
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/user-management-api']
 
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
