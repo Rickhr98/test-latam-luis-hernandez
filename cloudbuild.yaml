@@ -12,7 +12,7 @@ steps:
       - |
         gcloud run deploy user-management-api \
           --image gcr.io/$PROJECT_ID/user-management-api \
-          --region $REGION \
+          --region southamerica-west1 \
           --platform managed \
           --allow-unauthenticated
 
